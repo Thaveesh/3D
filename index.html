@@ -16,25 +16,9 @@
         width: 100vw;
         height: 100vh;
       }
-
-      /* Debugging: Styling for the scene */
-      .debug-text {
-        position: absolute;
-        top: 10px;
-        left: 10px;
-        background-color: rgba(255, 255, 255, 0.7);
-        padding: 5px;
-        border-radius: 5px;
-        z-index: 9999;
-        font-size: 14px;
-        color: black;
-      }
     </style>
   </head>
   <body>
-    <!-- Debugging Text -->
-    <div id="debug" class="debug-text">Loading AR...</div>
-
     <!-- AR.js Scene for Web AR -->
     <a-scene embedded arjs='sourceType: webcam;'>
       <!-- Use the default "hiro" marker preset -->
@@ -60,20 +44,5 @@
       <!-- Add the camera entity -->
       <a-entity camera></a-entity>
     </a-scene>
-
-    <script>
-      // Debugging: Display AR loading status
-      window.onload = function() {
-        document.getElementById('debug').innerText = 'Camera is ready, searching for marker...';
-      };
-
-      document.querySelector('a-scene').addEventListener('arReady', (event) => {
-        document.getElementById('debug').innerText = 'AR is ready, please show the "hiro" marker.';
-      });
-
-      document.querySelector('a-scene').addEventListener('arError', (event) => {
-        document.getElementById('debug').innerText = 'Error initializing AR: ' + event.message;
-      });
-    </script>
   </body>
 </html>
