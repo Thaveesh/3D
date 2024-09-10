@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Enhanced AR with Custom Marker</title>
+    <title>Enhanced AR with Hiro Marker</title>
     <!-- Include A-Frame and AR.js libraries -->
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/aframe/build/aframe-ar.min.js"></script>
@@ -21,8 +21,8 @@
   <body>
     <!-- AR.js Scene for Web AR -->
     <a-scene embedded arjs='sourceType: webcam;'>
-      <!-- Use a custom marker by specifying the URL to your custom .patt file -->
-      <a-marker type='pattern' url='pattern-text.patt'>
+      <!-- Use the default "hiro" marker preset -->
+      <a-marker preset='hiro'>
         <!-- 3D Text with interactivity -->
         <a-entity text="value: Hi friend; color: red; align: center; width: 4"
                   position="0 0.1 0"
